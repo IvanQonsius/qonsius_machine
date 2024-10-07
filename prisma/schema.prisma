@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Model Individual
+model Individual {
+  // Attributes
+  id          Int      @id @default(autoincrement()) // Primary key
+  user        Boolean  // Indicates if the individual is a user
+  name        String   // First name
+  lastName    String   // Last name
+  email       String   @unique // Unique email address
+  password    String   // Password (hashed)
+  createdAt   DateTime @default(now()) // Creation timestamp
+  updatedAt   DateTime @updatedAt // Automatically updated on each modification
+  inactivatedAt DateTime? // Optional field for inactivation timestamp (nullable)
+  // Relations
+  initiatives   Initiative[] @relation("IndividualInitiatives") // An individual may have many initiatives
+}
+
+// Model Initiative
+model Initiative {
+  // Attributes
+  id                 Int           @id @default(autoincrement()) // Primary key
+  name               String        // Name of the initiative
+  description        String        // Description of the initiative
+  LinkToSynthesisMap String?       // Optional link to synthesis map
+  createdAt          DateTime      @default(now()) // Creation timestamp
+  updatedAt          DateTime      @updatedAt // Automatically updated on each modification
+  // Relations
+  individuals        Individual[]  @relation("IndividualInitiatives") // An initiative can have many individuals
+}

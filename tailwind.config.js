@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'], // Keep your custom fonts
+      },
+      
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
