@@ -16,9 +16,27 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+// Static metadata (global for the entire site)
 export const metadata = {
   title: "qonsius",
   description: "A new perspective of entrepreneurship",
+  openGraph: {
+    title: "qonsius",
+    description: "A new perspective of entrepreneurship",
+    images: [
+      {
+        url: "/og-image.jpg", // Add an appropriate Open Graph image path
+        width: 800,
+        height: 600,
+        alt: "qonsius Open Graph Image",
+      },
+    ],
+  },
+  twitter: {
+    title: "qonsius",
+    description: "A new perspective of entrepreneurship",
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -1,48 +1,51 @@
-'use client'; // Needed for client-side functionality in Next.js App Directory
+'use client'; // This ensures the component works on the client side
 
 import { useState } from 'react';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation'; // In Next.js App Directory, use this for navigation
-import Head from 'next/head';
+import { signIn } from 'next-auth/react'; // Import signIn for NextAuth authentication
+import { useRouter } from 'next/navigation'; // For navigation after login
 
 export default function Login() {
-  const [email, setEmail] = useState('');        // State for email
-  const [password, setPassword] = useState('');  // State for password
+  const [email, setEmail] = useState('');        // State for email input
+  const [password, setPassword] = useState('');  // State for password input
   const [error, setError] = useState(null);      // State for error handling
-  const router = useRouter();                    // For redirecting after login
+  const router = useRouter();                    // For redirecting after successful login
 
-  // Handle form submission and authentication
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-    setError(null);     // Reset error state
+    e.preventDefault(); // Prevent form from submitting the traditional way
+    setError(null);     // Reset the error state
 
     // Sign in with NextAuth.js credentials provider
     const result = await signIn('credentials', {
-      redirect: false,   // We handle redirects manually
-      email,             // Send email
-      password,          // Send password
+      redirect: false,   // We handle the redirection manually
+      email,             // Pass the email input
+      password,          // Pass the password input
     });
+
+    console.log("Result from signIn:", result); // For debugging purposes
 
     // Check for errors returned from NextAuth.js
     if (result?.error) {
-      setError(result.error); // Show error if login fails
-    } else {
-      // If successful, redirect to members-only page or another protected page
-      router.push('/members-only');
+      setError(result.error); // Display error if login fails
+    } else if (result?.ok) {
+      // Fetch the current session to get user details
+      const response = await fetch('/api/auth/session');
+      const session = await response.json();
+
+      if (session?.user?.id) {
+        // Redirect to the user's profile page using their ID
+        router.push(`/members-only/profile/${session.user.id}`);
+      } else {
+        setError('Login successful but no user data returned.');
+      }
     }
   };
 
   return (
     <>
-      <Head>
-        <title>Login - Qonsius</title>
-      </Head>
-
       <div className="bg-black text-white flex flex-col min-h-screen">
-        {/* Add spacing between header and form */}
-        {/* Login Form Wrapper */}
-        <div className="flex-grow flex items-center justify-center mt-12"> {/* Adjust margin-top for spacing */}
-          <div className="bg-gray-900 rounded p-6 w-full max-w-sm pb-8"> {/* Adjust padding-bottom for spacing */}
+        <div className="flex-grow flex items-center justify-center mt-12"> 
+          <div className="bg-gray-900 rounded p-6 w-full max-w-sm pb-8"> 
             <h2 className="text-3xl font-semibold mb-4 text-center">Welcome back</h2>
 
             {/* Display error if login fails */}
@@ -89,14 +92,13 @@ export default function Login() {
             </form>
 
             <p className="text-center text-md text-white mt-4">
-              We provide an invite-only section for members. If you need assistance with your access{' '}
+              Need help?{' '}
               <a href="mailto:hello@qonsius.com" className="text-blue-400 hover:text-gray-400">
-                <strong>send us an email</strong>
+                <strong>Send us an email</strong>
               </a>
             </p>
           </div>
         </div>
-        {/* Footer will automatically appear below the form */}
       </div>
     </>
   );

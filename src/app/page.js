@@ -1,11 +1,6 @@
-import Head from 'next/head';
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Welcome to qonsius</title>
-      </Head>
 
       <div className="relative flex flex-col">
         {/* Background video container with reduced height */}
@@ -49,7 +44,6 @@ export default function Home() {
 
         {/* Footer should now be directly below the content */}
       </div>
-    </>
   );
 }
 
