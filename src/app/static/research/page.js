@@ -16,7 +16,7 @@ export default function Labs() {
         <p className="flex text-gray-300 mt-4">Research</p>
         <div className="flex items-center h-10vh">
           <h1 className="text-6xl font-bold">
-            Ordering everything to <br /> order entrepreneurship
+            A new level of understanding
           </h1>
         </div>
 
@@ -48,7 +48,7 @@ export default function Labs() {
         {/* Main contents */}
         <div className="max-w-4xl mx-auto"> 
           <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify">
-          When selecting “clarity” as our core contribution, we concluded that we must explore first the concepts of <strong>understanding</strong> and <strong>order</strong>. Order naturally facilitates understanding, which in turn generates clarity. Additionally, order is just an activity that requires a domain to focus on. To build a solid foundation, we have decided to research with an abstract perspective trying to order “anything or everything” before narrowing our focus to the context of entrepreneurship. We believe this will contribute a fundamental perspective that will serve as the foundation of the new clarity we seek. 
+          At our core, we are a research project dedicated to advancing our understanding of existence through the development of conceptual models. Our aim is to develop a philosophy that not only explains the profound truths underlying all forms of existence but also provide actionable insights for practical application in diverse contexts. By focusing first on universal existence and its implications, we seek to build a comprehensive body of knowledge that integrates the interconnectedness of the cosmos, web of life, individual experience, social systems, and technology. We believe that by deeply exploring these concepts, we can contribute to the creation of systems and models that guide individuals, organizations, and societies toward more positive and harmonious futures.
           </p>
   
           <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify mb-8">

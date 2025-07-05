@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Copyright Section */}
           <div className="mt-4">
-            <p className="text-sm">&copy; 2024 Qonsius. All rights reserved.</p>
+            <p className="text-sm">&copy; 2025 Qonsius. All rights reserved.</p>
           </div>
         </div>
 

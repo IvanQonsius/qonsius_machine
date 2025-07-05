@@ -24,7 +24,7 @@ export default function Header() {
                                 href="/static/company" 
                                 className="text-white text-md font-bold hover:text-gray-400 transition-colors leading-tight h-full flex items-center"
                             >
-                                Company
+                                About
                             </Link>
                         </li>
                         <li>
@@ -32,15 +32,7 @@ export default function Header() {
                                 href="/static/research" 
                                 className="text-white text-md font-bold hover:text-gray-400 transition-colors leading-tight h-full flex items-center"
                             >
-                                Research
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                href="/static/business" 
-                                className="text-white text-md font-bold hover:text-gray-400 transition-colors leading-tight h-full flex items-center"
-                            >
-                                Business
+                                R&D
                             </Link>
                         </li>
 

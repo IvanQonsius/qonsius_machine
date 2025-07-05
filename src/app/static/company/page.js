@@ -15,7 +15,7 @@ export default function Company() {
           <div className="flex flex-col items-start"> {/* Align items to the start */}
             {/* Company and Hero Section */}
             <br />
-            <p className="text-md text-gray-300 mt-4 ">Company</p>
+            <p className="text-md text-gray-300 mt-4 ">About</p>
             <div className="flex items-center text-white mb-4">
               <h1 className="text-6xl font-bold">
                 Know thyself
@@ -34,7 +34,7 @@ export default function Company() {
 
             {/* Content Paragraphs */}
             <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify">
-              As the digital age advances, humanity is presented with an unprecedented opportunity to leverage information technology to gain clarity - about ourselves, about the rest out there and about finding meaning in the interactions between both. Despite the diversity of subjective motivations we all have, we believe that this new level of <strong>tech-based awareness</strong> can become one of the key innovations that enables authentic and richer lives, full of satisfaction and fulfillment. 
+              As the digital age advances, humanity is presented with an unprecedented opportunity to leverage information technology to gain clarity - about ourselves, about the rest out there and about finding meaning in the interactions between both. This is a door for a radical difference in effectiveness and productivity. Despite the diversity of subjective motivations we all have, we believe that this new level of <strong>tech-based awareness</strong> can become one of the key innovations that enables authentic and richer lives, full of satisfaction and fulfillment. 
             </p>
     
             <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify">
@@ -42,7 +42,7 @@ export default function Company() {
             </p>
 
             <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify mb-4">
-              <strong>Helping the world to gain clarity in entrepreneurship</strong> is no easy feat but we (humbly) founded qonsius to tap into this potential.
+              <strong>Helping the world to gain clarity for a better entrepreneurship</strong> is no easy feat but we (humbly) founded qonsius to tap into this potential.
             </p>
           </div>
         </div>

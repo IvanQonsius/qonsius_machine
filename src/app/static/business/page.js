@@ -17,10 +17,10 @@ export default function Company() {
           <div className="flex flex-col items-start"> {/* Align items to the start */}
             {/* Company and Hero Section */}
             <br />
-            <p className="text-md text-gray-300">Business</p>
+            <p className="text-md text-gray-300">Solutions</p>
             <div className="flex items-center text-white mb-4">
               <h1 className="text-4xl font-bold">
-                Products and services <br />bringing clarity to entrepreneurship
+                Products and services bringing clarity <br/> to different customers and contexts
               </h1>
             </div>
 

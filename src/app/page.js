@@ -22,11 +22,10 @@ export default function Home() {
               <div className="max-w-4xl mx-auto flex flex-col justify-start items-start h-auto">
                 <div className="bg-gray-800 bg-opacity-90 p-8 rounded-lg">
                   <h1 className="text-4xl font-bold text-white mb-4">
-                    A new perspective of entrepreneurship
+                    A new perspective of things
                   </h1>
                   <p className="text-lg text-white mb-6">
-                    We are focused on simplifying the complexities of entrepreneurship to help individuals understand and shape their ventures with greater clarity, effectiveness, and speed. 
-                    Using an integration of proprietary visual frameworks and technology, we propose a radical new way to look at starting your new venture.
+                  Explore how systems thrive (or break down) and how a new framework and digital map help bring clarity, meaning, and progress to everything from personal decisions to global challenges
                   </p>
 
                   {/* CTA Button */}
@@ -34,7 +33,7 @@ export default function Home() {
                     href="#"
                     className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 mb-auto"
                   >
-                    See for yourself
+                    Get to know our work
                   </a>
                 </div>
               </div>
