@@ -30,7 +30,7 @@ export default function Home() {
 
                   {/* CTA Button */}
                   <a
-                    href="#"
+                    href="/static/research"
                     className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 mb-auto"
                   >
                     Get to know our work

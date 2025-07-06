@@ -1,107 +1,111 @@
+// src/app/static/research/page.js
 import Head from 'next/head';
-import Link from 'next/link'; // Import Link for navigation
+import Link from 'next/link';
+import PageTemplate from '@/app/components/PageTemplate';
 
-export default function Labs() {
+const STEPS = [
+  {
+    title: 'Theory',
+    body: `We’re building a theory of alignment that explains how well the parts of any
+           system fit and work together (or don’t). It’s meant to apply at all scales,
+           from physical matter to individual minds to large social systems.`,
+  },
+  {
+    title: 'Mapping Tool',
+    body: `We’re bringing the theory to life through a digital map, a dynamic system that
+           can map, assess, and describe anything. It reveals patterns of alignment or
+           misalignment, offering insight and guiding meaningful transformation.`,
+  },
+  {
+    title: 'Real-World Applications',
+    body: `To test its universality, we’re applying the models across a wide range of contexts
+           and situations. This helps us understand how well it works in practice and
+           how it can adapt to different systems and scales.`,
+  },
+];
+
+export default function ResearchPage() {
   return (
     <>
       <Head>
-        <title>Welcome to qonsius</title>
+        <title>Research &amp; Development – Qonsius</title>
       </Head>
 
-      <div className="relative min-h-screen bg-black text-white max-w-4xl mx-auto">
-        <br />
-        {/* Hero Section */}
-        <br />
-
-        <p className="flex text-gray-300 mt-4">Research</p>
-        <div className="flex items-center h-10vh">
-          <h1 className="text-6xl font-bold">
-            A new level of understanding
-          </h1>
-        </div>
-
-        {/* Images Section */}
-        <div className="flex justify-center max-w-4xl mx-auto mt-8 space-x-4 mb-4">
-          <div className="w-1/3">
-            <img
-              src="https://images.unsplash.com/photo-1715867155623-847902b1bbbe?q=80&w=3077&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image URL
-              alt="Description for image 1"
-              className="w-full h-full object-cover rounded"
-            />
+      <div className="bg-black text-white">
+        <PageTemplate
+          title="A new level of clarity"
+          description="Research & Development"
+        >
+          {/* Images Section */}
+          <div className="flex justify-center mb-12 space-x-4">
+            {[
+              'https://images.unsplash.com/photo-1715867155623-847902b1bbbe?q=80&w=3077&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1709764754457-4c408c4fe1b3?q=80&w=2824&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1716833322990-acbeae5cc3eb?q=80&w=2658&auto=format&fit=crop',
+            ].map((src, i) => (
+              <div key={i} className="w-1/3 h-48 overflow-hidden rounded">
+                <img
+                  src={src}
+                  alt={`Research visual ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
-          <div className="w-1/3">
-            <img
-              src="https://images.unsplash.com/photo-1709764754457-4c408c4fe1b3?q=80&w=2824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image URL
-              alt="Description for image 2"
-              className="w-full h-full object-cover rounded"
-            />
-          </div>
-          <div className="w-1/3">
-            <img
-              src="https://images.unsplash.com/photo-1716833322990-acbeae5cc3eb?q=80&w=2658&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image URL
-              alt="Description for image 3"
-              className="w-full h-full object-cover rounded"
-            />
-          </div>
-        </div>
 
-        {/* Main contents */}
-        <div className="max-w-4xl mx-auto"> 
-          <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify">
-          At our core, we are a research project dedicated to advancing our understanding of existence through the development of conceptual models. Our aim is to develop a philosophy that not only explains the profound truths underlying all forms of existence but also provide actionable insights for practical application in diverse contexts. By focusing first on universal existence and its implications, we seek to build a comprehensive body of knowledge that integrates the interconnectedness of the cosmos, web of life, individual experience, social systems, and technology. We believe that by deeply exploring these concepts, we can contribute to the creation of systems and models that guide individuals, organizations, and societies toward more positive and harmonious futures.
-          </p>
-  
-          <p className="text-lg mb-4 leading-relaxed text-gray-300 text-justify mb-8">
-          See below the different active research projects:
+          {/* Intro Text */}
+          <p className="text-lg leading-relaxed text-gray-300 mb-8">
+            Everything that exists is made of parts working together forming a unified
+            whole within a larger system. But why do some systems achieve harmony and last while
+            others fall into conflict and break down? We call the principle behind this
+            phenomenon <strong>alignment</strong>, and it’s the central focus of our work.
           </p>
 
-          {/* Vertically stacked Project Cards */}
-        
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-  
-          <Link href="/artifacts/artifact3">
-            <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 hover:text-white transition-colors duration-300">
-              <p className="text-gray-400">Classification</p>
-              <h3 className="text-xl font-bold mb-2 italic">Project "Discipla"</h3>
-              <p className="text-gray-300 mb-2 text-justify">
-                Explores all existing disciplines in human knowledge, covering both humanities, techno-scientific, and including inter-disciplinary. The objective of the research is to create a list of domains, possible subject of study and focus.
-              </p>
-            </div>
-          </Link>
+          <p className="text-lg leading-relaxed text-gray-300 mb-12">
+            We believe alignment operates <strong>universally</strong> across all levels of complexity; from
+            atoms forming molecules, to ants building colonies, to new ventures finding
+            market fit, to marriages lasting over decades. Our <strong>mission</strong> is to understand the
+            principles of alignment and to turn that understanding into tools for real-world
+            transformation.
+          </p>
 
-          <Link href="/artifacts/artifact3">
-            <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 hover:text-white transition-colors duration-300">
-              <p className="text-gray-400">Glossary</p>
-              <h3 className="text-xl font-bold mb-2 italic">Project "Lexis"</h3>
-              <p className="text-gray-300 mb-2 text-justify">
-              Develop a comprehensive glossary that defines and standardizes key terms across the different projects. By creating clear, concise definitions, the project seeks to eliminate ambiguity, ensuring consistent understanding and communication among stakeholders
-              </p>
-            </div>
-          </Link>
+          <p className="text-lg leading-relaxed text-gray-300 mb-12">
+            This work unfolds across three connected areas:
+          </p>
 
-          <Link href="/artifacts/artifact1">
-            <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 hover:text-white transition-colors duration-300">
-              <p className="text-gray-400">Visual language</p>
-              <h3 className="text-xl font-bold mb-2 italic">Project "Z"</h3>
-              <p className="text-gray-300 mb-2 text-justify">
-                Explores the structure and behavior of any domain within reality at any scale and timeframe. The objective of the research is to build a model that can be used to understand and explain anything from simple to complex, from formation to dissolution.
-              </p>
-            </div>
-          </Link>
+          {/* Focus Areas */}
+          <div className="border-l-2 border-gray-700 pl-6 space-y-12 mb-12">
+            {STEPS.map(({ title, body }) => (
+              <div key={title}>
+                <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+                <p className="text-gray-300 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
 
-          <Link href="/artifacts/artifact2">
-            <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 hover:text-white transition-colors duration-300">
-              <p className="text-gray-400">Visual language</p>
-              <h3 className="text-xl font-bold mb-2 italic">Project "X"</h3>
-              <p className="text-gray-300 mb-2 text-justify">
-                Explores any initiative of entrepreneurship by applying the model defined in Project "Z". The objective of the research is to build a model that can be used to understand and explain any initiative to find, launch, and scale any new venture into any market.
-              </p>
-            </div>
-          </Link>
+          {/* Journey Link */}
+          <p className="text-lg leading-relaxed text-gray-300 mb-8">
+            For more background on the project <br />{' '}
+            <Link href="/static/journey" className="text-blue-400 hover:underline">
+              Read the full journey
+            </Link>
+          </p>
 
-        </div>
-        </div>
+          {/* Call to Action */}
+          <p className="text-lg leading-relaxed text-gray-300">
+            If you’re interested in funding, research collaboration, or strategic partnerships, please send us an email <br />{' '}
+            <a
+              href="mailto:hello@qonsius.com?subject=Research%20Collaboration%20Inquiry"
+              className="text-blue-400 hover:underline"
+            >
+              hello@qonsius.com
+            </a>
+          </p>
+        </PageTemplate>
       </div>
     </>
   );
 }
+
+
+

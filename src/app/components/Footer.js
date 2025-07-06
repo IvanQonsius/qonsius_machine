@@ -1,16 +1,20 @@
+// src/app/components/Footer.js
+'use client';
+
 import Link from 'next/link';
+import StaticContainer from './StaticContainer';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-8 px-4 w-full flex-shrink-0">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+    <footer className="bg-black text-white py-8 w-full flex-shrink-0">
+      <StaticContainer className="flex flex-col md:flex-row justify-between gap-8">
         {/* Column 1: Legal */}
         <div className="flex-1">
           <h3 className="font-bold text-md mb-2">Legal</h3>
           <ul className="space-y-2">
             <li>
               <Link href="/static/legal?tab=terms" className="text-sm hover:text-gray-400">
-                Terms & Conditions
+                Terms &amp; Conditions
               </Link>
             </li>
             <li>
@@ -25,7 +29,7 @@ export default function Footer() {
             </li>
           </ul>
 
-          {/* Copyright Section */}
+          {/* Copyright */}
           <div className="mt-4">
             <p className="text-sm">&copy; 2025 Qonsius. All rights reserved.</p>
           </div>
@@ -61,7 +65,6 @@ export default function Footer() {
         {/* Column 3: Contact */}
         <div className="flex-1">
           <h3 className="font-bold text-md mb-2">Contact</h3>
-          {/* Address above email */}
           <p className="text-sm">
             Dublin 1, Las Rozas 28232, Madrid, Spain
           </p>
@@ -71,17 +74,7 @@ export default function Footer() {
             </a>
           </p>
         </div>
-      </div>
+      </StaticContainer>
     </footer>
   );
 }
-
-
-
-
-
-
-
-
-
-
