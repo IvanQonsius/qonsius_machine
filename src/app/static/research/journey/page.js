@@ -12,7 +12,7 @@ export default function JourneyPage() {
       <div className="bg-black text-white">
         <PageTemplate
           title="A timeline"
-          description="Reseaarch & Development / Journey"
+          description="Research & Development / Journey"
         >
           <section id="beginning">
             <h2 className="text-2xl font-semibold mb-2">2014–2016: A Personal Beginning</h2>

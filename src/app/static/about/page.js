@@ -31,7 +31,8 @@ export default function AboutPage() {
             <section id="company">
               <h2 className="text-2xl font-semibold mb-2">Company</h2>
               <p className="text-gray-300">
-                Qonsius Capital SL
+                Qonsius Capital SL <br />
+                ID B88183447
               </p>
               <Link
                 href="/static/legal"
@@ -48,7 +49,7 @@ export default function AboutPage() {
                 Meet the thinkers and builders behind the initiative.
               </p>
               <Link
-                href="/static/team"
+                href="/static/about/team"
                 className="text-blue-400 hover:underline"
               >
                 View team

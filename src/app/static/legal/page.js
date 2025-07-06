@@ -72,7 +72,7 @@ export default function LegalDisclaimer() {
                   <p className="text-base text-black">
                     Owner: QONSIUS CAPITAL, S. L., (hereinafter, “QONSIUS”) <br />
                     Registered office: Dublin 1, Local 5, Europolis Las Rozas, 28232, Madrid, Spain. <br />
-                    Tax identification number: B-B88183447 <br />
+                    Tax identification number: B-88183447 <br />
                     Public Registry: Registro Mercantil de Madrid, Tomo 35679, Folio 194, Hoja M-641219. <br />
                     Telephone number: +34 910 530 783 <br />
                     E-mail: hello@qonsius.com
@@ -122,7 +122,7 @@ export default function LegalDisclaimer() {
                   <p className="text-base text-black">
                     Company name: QONSIUS CAPITAL, S. L., (hereinafter, “QONSIUS”) <br />
                     Registered office: Dublin 1, Local 5, Europolis Las Rozas, 28232, Madrid, Spain. <br />
-                    Tax identification number: B88183447 <br />
+                    Tax identification number: B-88183447 <br />
                     Public Registry: Registro Mercantil de Madrid, Tomo 35679, Folio 194, Hoja M-641219. <br />
                     Telephone number: +34 910 530 783 <br />
                     E-mail: hello@qonsius.com
@@ -224,7 +224,7 @@ export default function LegalDisclaimer() {
                   This Cookie Policy is part of the Legal Notice and the Privacy Policy of the website <a href="http://www.qonsius.com" className="text-blue-500 underline">http://www.qonsius.com</a> ("Website"). The access and navigation on the Website, 
                   or the use of its services, implies acceptance of the terms and conditions contained herein along with the 
                   Legal Notice and the Privacy Policy. QONSIUS CAPITAL, S.L., (“QONSIUS”) it is the owner of the Website and it 
-                  is located at Dublin 1, Local 5, Europolis Las Rozas, 28232, Madrid, Spain, with N.I.F. B88183447. In this regard, 
+                  is located at Dublin 1, Local 5, Europolis Las Rozas, 28232, Madrid, Spain, with N.I.F. B-88183447. In this regard, 
                   QONSIUS informs you that it uses small pieces of data (“Cookies”) to help customize your user experience. 
                   We may update our Cookie Policy to reflect any changes in technology or data protection legislation. 
                   Any updates or changes that may affect how we use cookies or how you as a user can manage cookies will appear 

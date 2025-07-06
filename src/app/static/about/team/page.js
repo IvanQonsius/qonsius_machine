@@ -22,7 +22,7 @@ export default function TeamPage() {
 
       <div className="bg-black text-white">
         <PageTemplate
-          title="Meet the Team"
+          title="Meet the team"
           description="Team"
         >
           {/* Add vertical spacing between the title and the grid */}

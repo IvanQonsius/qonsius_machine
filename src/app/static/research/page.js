@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import PageTemplate from '@/app/components/PageTemplate';
 
-const STEPS = [
+const SECTIONS = [
   {
     title: 'Theory',
     body: `We’re building a theory of alignment that explains how well the parts of any
@@ -29,6 +29,10 @@ export default function ResearchPage() {
     <>
       <Head>
         <title>Research &amp; Development – Qonsius</title>
+        <meta
+          name="description"
+          content="Explore our research into alignment: from theory to tools to real-world applications."
+        />
       </Head>
 
       <div className="bg-black text-white">
@@ -65,7 +69,7 @@ export default function ResearchPage() {
             We believe alignment operates <strong>universally</strong> across all levels of complexity; from
             atoms forming molecules, to ants building colonies, to new ventures finding
             market fit, to marriages lasting over decades. Our <strong>mission</strong> is to understand the
-            principles of alignment and to turn that understanding into tools for real-world
+            principles of alignment and turn that understanding into tools for real-world
             transformation.
           </p>
 
@@ -73,9 +77,9 @@ export default function ResearchPage() {
             This work unfolds across three connected areas:
           </p>
 
-          {/* Focus Areas */}
+          {/* Focus Areas without links */}
           <div className="border-l-2 border-gray-700 pl-6 space-y-12 mb-12">
-            {STEPS.map(({ title, body }) => (
+            {SECTIONS.map(({ title, body }) => (
               <div key={title}>
                 <h3 className="text-2xl font-semibold mb-2">{title}</h3>
                 <p className="text-gray-300 leading-relaxed">{body}</p>
@@ -83,29 +87,27 @@ export default function ResearchPage() {
             ))}
           </div>
 
-          {/* Journey Link */}
+          {/* Journey Note */}
           <p className="text-lg leading-relaxed text-gray-300 mb-8">
-            For more background on the project <br />{' '}
-            <Link href="/static/journey" className="text-blue-400 hover:underline">
+            For more background on our project <br />
+            <Link href="/static/research/journey" className="text-blue-400 hover:underline">
               Read the full journey
             </Link>
           </p>
 
           {/* Call to Action */}
           <p className="text-lg leading-relaxed text-gray-300">
-            If you’re interested in funding, research collaboration, or strategic partnerships, please send us an email <br />{' '}
+            If you’re interested in funding, research collaboration, or strategic partnerships, please email us{' '}
             <a
               href="mailto:hello@qonsius.com?subject=Research%20Collaboration%20Inquiry"
               className="text-blue-400 hover:underline"
             >
               hello@qonsius.com
             </a>
+            
           </p>
         </PageTemplate>
       </div>
     </>
   );
 }
-
-
-

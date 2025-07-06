@@ -1,17 +1,30 @@
+// src/app/page.js
+import Head from 'next/head';
 
 export default function Home() {
   return (
+    <>
+      <Head>
+        <title>Qonsius – A new perspective of things</title>
+        <meta
+          name="description"
+          content="Explore how systems thrive (or break down) and discover our new framework and digital map that bring clarity, meaning, and progress to everything from personal decisions to global challenges."
+        />
+      </Head>
 
       <div className="relative flex flex-col">
         {/* Background video container with reduced height */}
-        <div className="relative" style={{ height: '85vh' }}> {/* Set the video container height to 85% of the viewport */}
+        <div className="relative" style={{ height: '85vh' }}>
           <video
             autoPlay
             loop
             muted
             className="absolute inset-0 object-cover w-full h-full"
           >
-            <source src="https://assets.mixkit.co/videos/17739/17739-720.mp4" type="video/mp4" />
+            <source
+              src="https://assets.mixkit.co/videos/17739/17739-720.mp4"
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
 
@@ -25,7 +38,7 @@ export default function Home() {
                     A new perspective of things
                   </h1>
                   <p className="text-lg text-white mb-6">
-                  Explore how systems thrive (or break down) and how a new framework and digital map help bring clarity, meaning, and progress to everything from personal decisions to global challenges
+                    Explore how systems thrive (or break down) and how a new framework and digital map help bring clarity, meaning, and progress to everything from personal decisions to global challenges.
                   </p>
 
                   {/* CTA Button */}
@@ -41,8 +54,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer should now be directly below the content */}
+        {/* Footer will follow via your global layout */}
       </div>
+    </>
   );
 }
 
