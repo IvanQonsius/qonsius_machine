@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import "../globals.css"; // Ensure the path to globals.css is correct
 import MemberHeader from './MemberHeader'; // Use MemberHeader for the top header
 import SessionWrapper from './SessionWrapper';
-import Membersidebar from './Membersidebar'; // Import Sidebar component
+import Membersidebar from './Membersidebar'; // Import Membersidebar component
 
 // Define fonts just like in the global layout
 const geistSans = localFont({
@@ -22,9 +22,9 @@ export default function MemberLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
         <SessionWrapper>
           <MemberHeader /> {/* Header with logout link */}
-          <div className="flex flex-grow"> {/* This flex container will allow for the sidebar and main content */}
-            <aside className="w-64 bg-gray-200"> {/* Sidebar with fixed width */}
-              <Membersidebar /> {/* Sidebar for member navigation */}
+          <div className="flex flex-grow"> {/* This flex container will allow for the Membersidebar and main content */}
+            <aside className="w-64 bg-gray-200"> {/* Membersidebar with fixed width */}
+              <Membersidebar /> {/* Membersidebar for member navigation */}
             </aside>
             <main className="flex-grow p-4"> {/* Main content area */}
               {children} {/* Render the content of the members-only pages */}
