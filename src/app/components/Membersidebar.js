@@ -1,4 +1,3 @@
-// src/app/components/Membersidebar.js
 'use client';
 
 import { useSession } from 'next-auth/react';
@@ -7,10 +6,10 @@ import Link from 'next/link';
 export default function Membersidebar() {
   const { data: session, status } = useSession();
 
-  // While the session is loading, you can show a placeholder or nothing:
+  // while loading, keep the same fixed layout
   if (status === 'loading') {
     return (
-      <div className="w-64 h-screen bg-gray-800 text-white fixed">
+      <div className="fixed top-16 left-0 bottom-0 w-48 bg-gray-800 text-white">
         <div className="p-4">Loading menu…</div>
       </div>
     );
@@ -19,7 +18,7 @@ export default function Membersidebar() {
   const userId = session?.user?.id;
 
   return (
-    <div className="w-64 h-screen bg-gray-800 text-white fixed">
+    <div className="fixed top-16 left-0 bottom-0 w-48 bg-gray-800 text-white overflow-auto">
       <div className="p-4">
         <h2 className="text-xl font-bold mb-4">Menu</h2>
         <ul>

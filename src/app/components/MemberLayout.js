@@ -1,10 +1,10 @@
 import localFont from "next/font/local";
-import "../globals.css"; // Ensure the path to globals.css is correct
-import MemberHeader from './MemberHeader'; // Use MemberHeader for the top header
-import SessionWrapper from './SessionWrapper';
-import Membersidebar from './Membersidebar'; // Import Membersidebar component
+import "../globals.css";
+import SessionWrapper from "./SessionWrapper";
+import MemberHeader from "./MemberHeader";
+import Membersidebar from "./Membersidebar";
 
-// Define fonts just like in the global layout
+// variable‑font definitions
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -19,17 +19,22 @@ const geistMono = localFont({
 export default function MemberLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SessionWrapper>
-          <MemberHeader /> {/* Header with logout link */}
-          <div className="flex flex-grow"> {/* This flex container will allow for the Membersidebar and main content */}
-            <aside className="w-64 bg-gray-200"> {/* Membersidebar with fixed width */}
-              <Membersidebar /> {/* Membersidebar for member navigation */}
-            </aside>
-            <main className="flex-grow p-4"> {/* Main content area */}
-              {children} {/* Render the content of the members-only pages */}
-            </main>
-          </div>
+          {/* 1) fixed header */}
+          <MemberHeader />
+
+          {/* 2) fixed sidebar */}
+          <Membersidebar />
+
+          {/**
+            3) main content is padded down by the header (pt-16 = 4rem)
+               and pushed right by the sidebar (ml-64 = 16rem),
+               then allowed to scroll.
+          **/}
+          <main className="pt-16 ml-48 pr-4 py-4 pl-0 min-h-screen overflow-auto">
+            {children}
+          </main>
         </SessionWrapper>
       </body>
     </html>
