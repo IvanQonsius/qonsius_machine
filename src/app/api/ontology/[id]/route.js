@@ -1,16 +1,25 @@
-import { NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/prisma'
+// src/app/api/ontology/[id]/route.js
+import { NextResponse }    from 'next/server'
+import { getServerSession } from 'next-auth/next'
+// one extra ../ to account for the [id] folder:
+import { authOptions }     from '../../../../../lib/auth'
+import * as svc            from '@/lib/ontologyService'
 
 export async function PUT(request, { params }) {
-  const { name, slug, description, synonyms } = await request.json()
-  const updated = await prisma.concept.update({
-    where: { id: params.id },
-    data: { name, slug, description, synonyms }
-  })
+  const session = await getServerSession(authOptions)
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+  const data = await request.json()
+  const updated = await svc.updateConcept(params.id, data)
   return NextResponse.json(updated)
 }
 
 export async function DELETE(request, { params }) {
-  await prisma.concept.delete({ where: { id: params.id } })
+  const session = await getServerSession(authOptions)
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+  await svc.deleteConcept(params.id)
   return NextResponse.json({ success: true })
 }

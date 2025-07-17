@@ -65,7 +65,7 @@ const UserProfile = ({ params }) => {
 
   return (
     <MembersLayout> {/* Wrap with MembersLayout */}
-      <div className="profile-container max-w-4xl mx-auto mt-8">
+      <div className="pl-8 max-w-4xl mt-8">
         <h1>Welcome to your profile, {profileData.name} {profileData.lastName}</h1>
         <p>Email: {profileData.email}</p>
         <p>Created At: {new Date(profileData.createdAt).toLocaleString()}</p>
